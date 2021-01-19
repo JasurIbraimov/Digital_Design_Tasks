@@ -1,0 +1,143 @@
+/* ----------------- IMPORTS ----------------- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap");
+
+/* ----------------- VARIABLES ----------------- */
+:root {
+  /* Fonts */
+  --main-font-family: "Roboto", sans-serif;
+  --text-font-size: 14px;
+  --text-font-weight: 400;
+  --title-font-size: 32px;
+  --title-font-weight: 500;
+  /* Colors */
+  --primary-color: #cccccc;
+  --primary-color-alt: #9c9c9c;
+  --additional-color: #616161;
+  --title-color: #000000;
+  --label-color: #3a3a3a;
+  /* Metrics */
+  --container-width: 1140px;
+  --container-height: 100vh;
+  --form-width: 400px;
+  --full-width: 100%;
+  --half-width: 50%;
+  --submit-btn-width: 95px;
+  --cancel-btn-width: 74px;
+  /* Borders */
+  --main-border-radius: 3px;
+  --border-divider: 1px solid #c4c4c4;
+  --form-border: 2px solid #626262;
+  /* Margins */
+  --mb-0: 0px;
+  --mb-1: 5px;
+  --mb-2: 20px;
+  --mr-1: 10px;
+  /* Padding */
+  --pd-0: 0px;
+  --pd-main: 20px;
+  --pd-buttons: 8px 12px;
+  --pd-inputs: 6px 10px;
+}
+/* ----------------- BASE ----------------- */
+* {
+    margin: var(--mb-0);
+    padding: var(--pd-0);
+    font-family: var(--main-font-family);
+    box-sizing: border-box;
+  }
+.container {
+  max-width: var(--container-width);
+  min-height: var(--container-height);
+  margin: var(--mb-0) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------- FORM ----------------- */
+.form {
+  width: var(--form-width);
+  background-color: var(--primary-color-alt);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--main-border-radius);
+  border: var(--form-border);
+}
+
+/* FORM: title */
+.form .form__title {
+  padding: var(--pd-main);
+  font-weight: var(--title-font-weight);
+  font-size: var(--title-font-size);
+  color: var(--title-color); 
+}
+
+/* FORM: fields */
+.form .form__fields {
+  width: var(--full-width);
+  padding: var(--pd-main);
+  border-top: var(--border-divider);
+  border-bottom: var(--border-divider);
+}
+.form .form__fields .form__field {
+  margin-bottom: var(--mb-2);
+}
+.form .form__fields .form__field:last-child {
+  margin-bottom: var(--mb-0);
+}
+.form .form__fields .form__field.form__field_long {
+  width: var(--full-width);
+}
+.form .form__fields .form__field.form__field_short {
+  width: var(--half-width);
+}
+.form .form__fields .form__field input {
+  width: var(--full-width);
+  padding: var(--pd-inputs);
+  font-weight: var(--text-font-weight);
+  font-size: var(--text-font-size);
+  color: var(--primary-color);
+  border: none;
+  border-radius: var(--main-border-radius);
+}
+.form .form__fields .form__field label {
+  font-weight: var(--text-font-weight);
+  display: block;
+  font-size: var(--text-font-size);
+  color: var(--label-color);
+  margin-bottom: var(--mb-1);
+}
+.form .form__fields .form__passwords {
+  display: flex;
+}
+.form .form__fields .form__passwords .form__field:first-child {
+  margin-right: var(--mr-1);
+}
+
+/* FORM: actions */
+.form .form__actions {
+  padding: var(--pd-main);
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .form__actions .form__button {
+  padding: var(--pd-buttons);
+  border: none;
+  border-radius: var(--main-border-radius);
+  font-size: var(--text-font-size);
+  font-weight: var(--text-font-weight);
+  cursor: pointer;
+}
+
+.form .form__actions .form__button.form__button_submit {
+  width: var(--submit-btn-width);
+  color: var(--primary-color);
+  background: var(--additional-color);
+}
+
+.form .form__actions .form__button.form__button_cancel {
+  width: var(--cancel-btn-width);
+  color: var(--additional-color);
+  background: var(--primary-color);
+}

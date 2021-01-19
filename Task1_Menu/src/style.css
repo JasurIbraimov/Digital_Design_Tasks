@@ -1,0 +1,84 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* VARIABLES */
+:root {
+  /* Fonts */
+  --main-font-family: "Roboto", sans-serif;
+  /* Colors */
+  --primary-color: #CCCCCC;
+  --primary-color-alt: #9C9C9C;
+  --additional-color: #000000;
+  /* Metrics */
+  --container-width: 1140px;
+  --container-height: 100vh;
+  --menu-width: 358px;
+  --full-width: 100%;
+  /* Margins */
+  --m-0: 0px;
+  /* Paddings */
+  --pd-0: 0px;
+  --pd-menu-item: 10px 20px;
+  /* Borders */
+  --menu-border-radius: 10px;
+  --up-border-radius: 10px 10px 0px 0px;
+  --down-border-radius: 0px 0px 10px 10px;
+}
+/* ------------------- BASE ------------------- */
+* {
+  margin: var(--m-0);
+  padding: var(--pd-0);
+  font-family: var(--main-font-family);
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  min-height: var(--container-height);
+  margin: var(--m-0) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------- MENU ------------------- */
+.menu {
+  width: var(--menu-width);
+  border-radius: var(--menu-border-radius);
+  background-color: var(--primary-color);
+  border: 1px solid var(--additional-color);
+}
+
+/* MENU: list item */
+.menu li {
+  width: var(--full-width);
+  padding: var(--pd-menu-item);
+  transition: background-color 0.25s;
+  cursor: pointer;
+  
+}
+.menu li:first-child{
+  border-radius: var(--up-border-radius);
+}
+.menu li:last-child {
+  border-radius: var(--down-border-radius);
+}
+.menu li a {
+  display: block;
+  width: var(--full-width);
+  color: var(--additional-color);
+}
+
+/* MENU: list item - hover */
+.menu li:hover {
+  background-color: var(--primary-color-alt);
+}
+

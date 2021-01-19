@@ -1,0 +1,94 @@
+/* ----------------- IMPORTS ----------------- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+/* ----------------- VARIABLES ----------------- */
+:root {
+  /* Fonts */
+  --main-font-family: "Roboto", sans-serif;
+  --text-font-size: 14px;
+  --stepper-item-font-weight: 700;
+  --title-font-size: 32px;
+  --title-font-weight: 500;
+  /* Colors */
+  --text-color: #fff;
+  /* Metrics */
+  --container-width: 1140px;
+  --container-height: 100vh;
+  --stepper-width: 310px;
+  /* Margins */
+  --mb-0: 0px;
+  /* Padding */
+  --pd-0: 0px;
+  --pd-stepper: 17px 0px;
+  /* Clip-path */
+  --first-step-clip-path: polygon(
+    96% 0,
+    100% 50%,
+    96% 100%,
+    0% 100%,
+    0 50%,
+    0% 0%
+  );
+  --between-step-clip-path: polygon(
+    96% 0,
+    100% 50%,
+    96% 100%,
+    0 100%,
+    4% 50%,
+    0% 0%
+  );
+  --last-step-clip-path: polygon(
+    100% 0,
+    100% 50%,
+    100% 100%,
+    0% 100%,
+    4% 50%,
+    0% 0%
+  );
+  /* Background */
+  --inactive-step-bg: linear-gradient(180deg, #686868 0%, #b3b3b3 50.52%, #686868 100%);
+  --active-step-bg: linear-gradient(180deg, #2ea239 0%, #62fd71 50.52%, #2ea139 100%);
+}
+/* ----------------- BASE ----------------- */
+* {
+  margin: var(--mb-0);
+  padding: var(--pd-0);
+  font-family: var(--main-font-family);
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style-type: none;
+}
+.container {
+  max-width: var(--container-width);
+  min-height: var(--container-height);
+  margin: var(--mb-0) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------- STEPPER ----------------- */
+.stepper {
+  display: flex;
+}
+
+.stepper li {
+  background: var(--inactive-step-bg);
+  width: var(--stepper-width);
+  padding: var(--pd-stepper);
+  color: var(--text-color);
+  font-weight: var(--stepper-item-font-weight);
+  text-align: center;
+  clip-path: var(--between-step-clip-path);
+}
+.stepper li:first-child {
+  clip-path: var(--first-step-clip-path);
+}
+.stepper li:last-child {
+  clip-path: var(--last-step-clip-path);
+}
+
+.stepper li.active {
+  background: var(--active-step-bg);
+}

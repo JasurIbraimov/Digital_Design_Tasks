@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" class="form">
+        <h1 class="form__title">Регистрация</h1>
+        <div class="form__fields">
+          <div class="form__field form__field_long">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@site.domain"
+            />
+          </div>
+          <div class="form__passwords">
+            <div class="form__field form__field_short">
+              <label for="password">Пароль</label>
+              <input type="password" name="password" placeholder="password" />
+            </div>
+            <div class="form__field form__field_short">
+              <label for="repeat_password">Повторите пароль</label>
+              <input
+                type="password"
+                name="repeat_password"
+                placeholder="password"
+              />
+            </div>
+          </div>
+          <div class="form__field form__field_long">
+            <label for="full_name">ФИО</label>
+            <input
+              type="text"
+              name="full_name"
+              placeholder="Игорев Игорь Игоревич"
+            />
+          </div>
+          <div class="form__field form__field_short">
+            <label for="age">Возраст</label>
+            <input type="number" name="age" placeholder="18" />
+          </div>
+        </div>
+        <div class="form__actions">
+          <button type="submit" class="form__button form__button_submit">Отправить</button>
+          <button type="button" class="form__button form__button_cancel">
+            Отмена
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
